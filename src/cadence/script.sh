@@ -32,10 +32,10 @@ for dir in "${directories[@]}"; do
     
     # Modify the file, change the variable file_name to the absolute path of $file
     # Replace line 7 with the absolute path
-    sed -i "7s|.*|set design \"$absolute_path\"|" /users/csulb/csulb-t3003/kevin/verilog_files/run_genus.tcl
+    sed -i "7s|.*|set design \"$absolute_path\"|" ./verilog_files/run_genus.tcl
     sleep 4 # Sleep for 1 second
 
-      command="genus -batch -f /users/csulb/csulb-t3003/kevin/verilog_files/run_genus.tcl"
+      command="genus -batch -f ./verilog_files/run_genus.tcl"
       # Execute the command
       echo "Executing: $command"
       eval $command

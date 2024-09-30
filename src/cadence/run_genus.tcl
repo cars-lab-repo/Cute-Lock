@@ -1,10 +1,10 @@
 # Set up the HDL search path
-set_db init_hdl_search_path {/users/csulb/csulb-t3003/kevin/verilog_files/Original/}
+set_db init_hdl_search_path {TDB path to folder}
 
 # Load the GPDK090 technology library from gpdk090_v4.6
 read_libs /CMC/kits/cadence/GPDK045/gsclib045_all_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib
 
-set design "/users/csulb/csulb-t3003/kevin/verilog_files/k6__maxgatesAll__1/./c1355_encrypted__/c1355_encrypted.v"
+set design "TDB path to file"
 set output_dir [file dirname $design]
 set design_name [file rootname [file tail $design]]
 # Create a new directory for the design results
