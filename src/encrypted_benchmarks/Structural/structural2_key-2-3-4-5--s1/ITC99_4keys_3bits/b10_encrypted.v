@@ -1,0 +1,299 @@
+// Benchmark "./test_runs/structural2_key-2-3-4-5--s-120240927_164306/ITC99/b10_encrypted" written by ABC on Fri Sep 27 18:32:50 2024
+
+module b10_encrypted  ( clock, 
+    R_BUTTON, G_BUTTON, KEY, START, TEST, RTS, RTR, V_IN_3_, V_IN_2_,
+    V_IN_1_, V_IN_0_, keyinput0, keyinput1, keyinput2,
+    CTS_REG, CTR_REG, V_OUT_REG_3_, V_OUT_REG_2_, V_OUT_REG_1_,
+    V_OUT_REG_0_  );
+  input  clock;
+  input  R_BUTTON, G_BUTTON, KEY, START, TEST, RTS, RTR, V_IN_3_,
+    V_IN_2_, V_IN_1_, V_IN_0_, keyinput0, keyinput1, keyinput2;
+  output CTS_REG, CTR_REG, V_OUT_REG_3_, V_OUT_REG_2_, V_OUT_REG_1_,
+    V_OUT_REG_0_;
+  reg VOTO0_REG, STATO_REG_3_, STATO_REG_2_, STATO_REG_1_, STATO_REG_0_,
+    V_OUT_REG_3_, V_OUT_REG_2_, V_OUT_REG_1_, V_OUT_REG_0_, SIGN_REG_3_,
+    VOTO1_REG, CTR_REG, VOTO3_REG, LAST_R_REG, CTS_REG, VOTO2_REG,
+    LAST_G_REG, Q_0, Q_1;
+  wire new_U200, new_U201, new_U202, new_U203, new_U204, new_U205, new_U206,
+    new_U213, new_U214, new_U215, new_U216, new_U217, new_U218, new_U219,
+    new_U220, new_U221, new_U222, new_U223, new_U224, new_U225, new_U226,
+    new_U227, new_U228, new_U229, new_U230, new_U231, new_U232, new_U243,
+    new_U244, new_U245, new_U246, new_U247, new_U248, new_U249, new_U250,
+    new_U251, new_U252, new_U253, new_U254, new_U255, new_U256, new_U257,
+    new_U258, new_U259, new_U260, new_U261, new_U262, new_U263, new_U264,
+    new_U265, new_U266, new_U267, new_U268, new_U269, new_U270, new_U271,
+    new_U272, new_U273, new_U274, new_U275, new_U276, new_U277, new_U278,
+    new_U279, new_U280, new_U281, new_U282, new_U283, new_U284, new_U285,
+    new_U286, new_U287, new_U288, new_U289, new_U290, new_U291, new_U292,
+    new_U293, new_U294, new_U295, new_U296, new_U297, new_U298, new_U299,
+    new_U300, new_U301, new_U302, new_U303, new_U304, new_U305, new_U306,
+    new_U307, new_U308, new_U309, new_U310, new_U311, new_U312, new_U313,
+    new_U314, new_U315, new_U316, new_U317, new_U318, new_U319, new_U320,
+    new_U321, new_U322, new_U323, new_U324, new_U325, new_U326, new_U327,
+    new_U328, new_U329, new_U330, new_U331, new_U332, new_U333, new_U334,
+    new_U335, new_U336, new_U337, new_U338, new_U339, new_U340, new_U341,
+    new_U342, new_U343, new_U344, new_U345, new_U346, new_U347, new_U348,
+    new_U349, new_U350, new_U351, new_U352, new_U353, new_U354, new_U355,
+    new_U356, new_U357, new_U358, new_U359, new_U360, new_U361, new_U362,
+    new_U363, new_U364, new_U365, new_U366, new_U367, new_U368, new_U369,
+    new_U370, new_U371, new_not_keyinput0, new_not_keyinput1,
+    new_not_keyinput2, new_not_0, new_and_1, new_not_2, new_and_3,
+    new_not_Q_0, new_not_Q_1, new_count_state_1, new_count_state_2,
+    new_count_state_3, new_y_mux_key0_and_0, new_y_mux_key0_and_1,
+    new_y_mux_key0, new_y_mux_key1_and_0, new_y_mux_key1_and_1,
+    new_y_mux_key1, new_y_mux_key2_and_0, new_y_mux_key2_and_1,
+    new_y_mux_key2, new_y_mux_key3_and_0, new_y_mux_key3_and_1,
+    new_y_mux_key3, new__state_1, new__state_2, new__state_3, new__state_5,
+    new_s__state_1, new_not_s__state_1, new_I0__state_1, new_I1__state_1,
+    new_and_mux__state_1, new_and_mux__state_1_2, new_y_mux_4,
+    new_s__state_3, new_not_s__state_3, new_I0__state_3, new_I1__state_3,
+    new_and_mux__state_3, new_and_mux__state_3_2, new_y_mux_5,
+    new_s__state_5, new_not_s__state_5, new_I0__state_5, new_I1__state_5,
+    new_and_mux__state_5, new_and_mux__state_5_2, n42, n47, n52, n57, n62,
+    n67, n71, n75, n79, n83, n88, n93, n97, n102, n107, n111, n116, n468,
+    n471;
+  assign new_U200 = ~STATO_REG_3_ & ~STATO_REG_2_;
+  assign new_U201 = STATO_REG_2_ & new_U213;
+  assign new_U202 = START & new_U258;
+  assign new_U203 = new_U269 & new_U268;
+  assign new_U204 = new_U203 & new_U261;
+  assign new_U205 = new_U204 & new_U291;
+  assign new_U206 = new_U231 & new_U299;
+  assign n107 = ~new_U317 | ~new_U316 | ~new_U315 | ~new_U246;
+  assign n93 = ~new_U260 | ~new_U301;
+  assign n83 = ~new_U290 | ~new_U289;
+  assign n57 = ~new_U340 | ~new_U341 | ~new_U332 | ~new_U218;
+  assign n52 = ~new_U284 | ~new_U283 | ~new_U218;
+  assign n47 = ~new_U280 | ~new_U279;
+  assign new_U213 = ~STATO_REG_0_;
+  assign new_U214 = ~STATO_REG_0_ | ~new_U217;
+  assign new_U215 = ~STATO_REG_2_;
+  assign new_U216 = ~RTR;
+  assign new_U217 = ~STATO_REG_1_;
+  assign new_U218 = ~STATO_REG_1_ | ~new_U201;
+  assign new_U219 = ~RTS;
+  assign new_U220 = ~new_U200 | ~new_U213;
+  assign new_U221 = ~STATO_REG_3_;
+  assign new_U222 = ~START;
+  assign new_U223 = ~START | ~new_U200;
+  assign new_U224 = ~STATO_REG_1_ | ~STATO_REG_0_;
+  assign new_U225 = ~STATO_REG_1_ | ~new_U221;
+  assign new_U226 = ~VOTO1_REG;
+  assign new_U227 = ~VOTO2_REG;
+  assign new_U228 = ~new_U248 | ~new_U247 | ~VOTO2_REG | ~VOTO1_REG;
+  assign new_U229 = ~new_U203 | ~new_U244 | ~new_U272 | ~new_U246 | ~new_U260;
+  assign new_U230 = ~SIGN_REG_3_;
+  assign new_U231 = ~STATO_REG_1_ | ~new_U215;
+  assign new_U232 = ~KEY;
+  assign n62 = ~new_U343 | ~new_U342;
+  assign n67 = ~new_U345 | ~new_U344;
+  assign n71 = ~new_U347 | ~new_U346;
+  assign n75 = ~new_U349 | ~new_U348;
+  assign n79 = ~new_U351 | ~new_U350;
+  assign n88 = ~new_U353 | ~new_U352;
+  assign n97 = ~new_U363 | ~new_U362;
+  assign n102 = ~new_U365 | ~new_U364;
+  assign n111 = ~new_U367 | ~new_U366;
+  assign n116 = ~new_U369 | ~new_U368;
+  assign new_U243 = ~new_U371 | ~new_U370;
+  assign new_U244 = new_U273 & new_U336 & new_U335;
+  assign new_U245 = ~new_U357 | ~new_U356;
+  assign new_U246 = ~new_U201 | ~RTR | ~new_U217;
+  assign new_U247 = ~VOTO3_REG;
+  assign new_U248 = ~VOTO0_REG;
+  assign new_U249 = ~new_U205 | ~new_U292 | ~new_U263;
+  assign new_U250 = ~new_U205 | ~new_U304;
+  assign new_U251 = ~LAST_R_REG;
+  assign new_U252 = ~new_U202 | ~KEY | ~STATO_REG_1_;
+  assign new_U253 = ~new_U205 | ~new_U318 | ~new_U263;
+  assign new_U254 = ~LAST_G_REG;
+  assign new_U255 = ~new_U204 | ~new_U323 | ~new_U223;
+  assign new_U256 = ~new_U228;
+  assign new_U257 = ~TEST;
+  assign new_U258 = ~new_U220;
+  assign new_U259 = ~new_U218;
+  assign new_U260 = ~new_U264 | ~STATO_REG_2_ | ~new_U219;
+  assign new_U261 = ~new_U264 | ~STATO_REG_3_ | ~new_U215;
+  assign new_U262 = ~new_U223;
+  assign new_U263 = ~new_U202 | ~new_U232;
+  assign new_U264 = ~new_U214;
+  assign new_U265 = ~new_U231;
+  assign new_U266 = ~new_U224;
+  assign new_U267 = ~new_U246;
+  assign new_U268 = ~RTS | ~new_U259;
+  assign new_U269 = ~new_U258 | ~new_U217;
+  assign new_U270 = RTR | STATO_REG_1_;
+  assign new_U271 = ~new_U225;
+  assign new_U272 = ~STATO_REG_3_ | ~new_U334 | ~new_U333;
+  assign new_U273 = ~new_U262 | ~STATO_REG_0_;
+  assign new_U274 = ~new_U229;
+  assign new_U275 = ~new_U256 | ~new_U201;
+  assign new_U276 = ~new_U258 | ~new_U257;
+  assign new_U277 = ~new_U276 | ~new_U275;
+  assign new_U278 = ~new_U213 | ~new_U229;
+  assign new_U279 = ~new_U229 | ~new_U277 | ~new_U217;
+  assign new_U280 = ~STATO_REG_3_ | ~new_U278;
+  assign new_U281 = ~new_U213 | ~new_U228;
+  assign new_U282 = ~new_U229 | ~new_U281 | ~new_U214;
+  assign new_U283 = ~STATO_REG_1_ | ~new_U339;
+  assign new_U284 = ~STATO_REG_2_ | ~new_U282;
+  assign new_U285 = ~new_U256 | ~new_U221;
+  assign new_U286 = ~new_U285 | ~new_U213 | ~new_U217;
+  assign new_U287 = ~new_U286 | ~new_U218 | ~new_U220;
+  assign new_U288 = ~new_U258 | ~new_U257 | ~new_U217;
+  assign new_U289 = ~SIGN_REG_3_ | ~new_U288;
+  assign new_U290 = ~STATO_REG_3_ | ~STATO_REG_0_;
+  assign new_U291 = ~new_U264 | ~START | ~new_U215;
+  assign new_U292 = ~new_U202 | ~G_BUTTON | ~new_U254;
+  assign new_U293 = ~new_U249;
+  assign new_U294 = ~new_U259 | ~new_U221;
+  assign new_U295 = ~new_U261 | ~new_U294;
+  assign new_U296 = ~new_U265 | ~KEY | ~new_U226;
+  assign new_U297 = ~V_IN_1_ | ~new_U295;
+  assign new_U298 = ~new_U297 | ~new_U296;
+  assign new_U299 = ~STATO_REG_2_ | ~new_U217;
+  assign new_U300 = ~new_U206 | ~new_U213 | ~new_U355 | ~new_U354;
+  assign new_U301 = ~CTR_REG | ~new_U300;
+  assign new_U302 = ~START | ~new_U232;
+  assign new_U303 = ~new_U224 | ~new_U302;
+  assign new_U304 = ~new_U200 | ~new_U303;
+  assign new_U305 = ~new_U250;
+  assign new_U306 = ~new_U266 | ~new_U361;
+  assign new_U307 = ~V_IN_3_ | ~new_U295;
+  assign new_U308 = ~new_U307 | ~new_U306;
+  assign new_U309 = ~new_U252;
+  assign new_U310 = STATO_REG_0_ | STATO_REG_3_;
+  assign new_U311 = ~RTR | ~new_U310;
+  assign new_U312 = ~STATO_REG_3_ | ~new_U264;
+  assign new_U313 = ~STATO_REG_1_ | ~new_U213;
+  assign new_U314 = ~new_U311 | ~new_U312 | ~new_U206 | ~new_U313;
+  assign new_U315 = ~new_U201 | ~STATO_REG_3_ | ~new_U217;
+  assign new_U316 = ~new_U264 | ~RTR | ~new_U200;
+  assign new_U317 = ~CTS_REG | ~new_U314;
+  assign new_U318 = ~new_U202 | ~R_BUTTON | ~new_U251;
+  assign new_U319 = ~new_U253;
+  assign new_U320 = ~new_U265 | ~KEY | ~new_U227;
+  assign new_U321 = ~V_IN_2_ | ~new_U295;
+  assign new_U322 = ~new_U321 | ~new_U320;
+  assign new_U323 = ~new_U265 | ~new_U339;
+  assign new_U324 = ~new_U255;
+  assign new_U325 = ~KEY | ~new_U258;
+  assign new_U326 = ~STATO_REG_3_ | ~new_U230;
+  assign new_U327 = ~new_U326 | ~new_U325;
+  assign new_U328 = ~STATO_REG_1_ | ~new_U327;
+  assign new_U329 = ~V_IN_0_ | ~new_U295;
+  assign new_U330 = ~new_U329 | ~new_U328;
+  assign new_U331 = ~V_IN_1_ | ~V_IN_0_ | ~V_IN_3_ | ~V_IN_2_;
+  assign new_U332 = ~new_U274 | ~STATO_REG_1_;
+  assign new_U333 = ~STATO_REG_0_ | ~new_U331;
+  assign new_U334 = ~new_U213 | ~new_U270 | ~new_U231;
+  assign new_U335 = ~new_U215 | ~new_U271 | ~new_U222;
+  assign new_U336 = ~STATO_REG_2_ | ~new_U266 | ~new_U216;
+  assign new_U337 = ~STATO_REG_3_ | ~new_U213;
+  assign new_U338 = ~STATO_REG_0_ | ~new_U221;
+  assign new_U339 = ~new_U338 | ~new_U337;
+  assign new_U340 = ~new_U225 | ~STATO_REG_0_ | ~new_U229;
+  assign new_U341 = ~new_U271 | ~new_U213;
+  assign new_U342 = ~new_U274 | ~STATO_REG_0_;
+  assign new_U343 = ~new_U287 | ~new_U229;
+  assign new_U344 = ~V_OUT_REG_3_ | ~new_U246;
+  assign new_U345 = ~VOTO3_REG | ~new_U267;
+  assign new_U346 = ~V_OUT_REG_2_ | ~new_U246;
+  assign new_U347 = ~new_U267 | ~VOTO2_REG;
+  assign new_U348 = ~V_OUT_REG_1_ | ~new_U246;
+  assign new_U349 = ~new_U267 | ~VOTO1_REG;
+  assign new_U350 = ~V_OUT_REG_0_ | ~new_U246;
+  assign new_U351 = ~VOTO0_REG | ~new_U267;
+  assign new_U352 = ~new_U293 | ~VOTO1_REG;
+  assign new_U353 = ~new_U298 | ~new_U249;
+  assign new_U354 = ~STATO_REG_3_ | ~new_U217;
+  assign new_U355 = ~STATO_REG_1_ | ~new_U219;
+  assign new_U356 = ~VOTO2_REG | ~new_U248;
+  assign new_U357 = ~VOTO0_REG | ~new_U227;
+  assign new_U358 = ~new_U245;
+  assign new_U359 = ~new_U358 | ~VOTO1_REG;
+  assign new_U360 = ~new_U245 | ~new_U226;
+  assign new_U361 = ~new_U360 | ~new_U359;
+  assign new_U362 = ~new_U305 | ~VOTO3_REG;
+  assign new_U363 = ~new_U308 | ~new_U250;
+  assign new_U364 = ~LAST_R_REG | ~new_U252;
+  assign new_U365 = ~new_U309 | ~R_BUTTON;
+  assign new_U366 = ~new_U319 | ~VOTO2_REG;
+  assign new_U367 = ~new_U322 | ~new_U253;
+  assign new_U368 = ~LAST_G_REG | ~new_U252;
+  assign new_U369 = ~new_U309 | ~G_BUTTON;
+  assign new_U370 = ~new_U324 | ~VOTO0_REG;
+  assign new_U371 = ~new_U330 | ~new_U255;
+  assign new_not_keyinput0 = ~keyinput0;
+  assign new_not_keyinput1 = ~keyinput1;
+  assign new_not_keyinput2 = ~keyinput2;
+  assign new_not_0 = ~Q_0;
+  assign new_and_1 = new_not_0 & Q_1;
+  assign new_not_2 = ~Q_1;
+  assign new_and_3 = Q_0 & new_not_2;
+  assign n471 = new_and_1 | new_and_3;
+  assign n468 = ~Q_0;
+  assign new_not_Q_0 = ~Q_0;
+  assign new_not_Q_1 = ~Q_1;
+  assign new_count_state_1 = new_not_Q_1 & Q_0;
+  assign new_count_state_2 = Q_1 & new_not_Q_0;
+  assign new_count_state_3 = Q_1 & Q_0;
+  assign new_y_mux_key0_and_0 = n52 & new_not_keyinput2 & keyinput0 & new_not_keyinput1;
+  assign new_y_mux_key0_and_1 = new_U243 & new_not_keyinput2 & new_not_keyinput0 & keyinput1;
+  assign new_y_mux_key0 = new_y_mux_key0_and_0 | new_y_mux_key0_and_1;
+  assign new_y_mux_key1_and_0 = n52 & new_not_keyinput2 & new_not_keyinput0 & keyinput1;
+  assign new_y_mux_key1_and_1 = new_U243 & keyinput2 & new_not_keyinput0 & keyinput1;
+  assign new_y_mux_key1 = new_y_mux_key1_and_0 | new_y_mux_key1_and_1;
+  assign new_y_mux_key2_and_0 = n52 & keyinput2 & keyinput0 & keyinput1;
+  assign new_y_mux_key2_and_1 = new_U243 & new_not_keyinput2 & keyinput0 & new_not_keyinput1;
+  assign new_y_mux_key2 = new_y_mux_key2_and_0 | new_y_mux_key2_and_1;
+  assign new_y_mux_key3_and_0 = n52 & new_not_keyinput2 & new_not_keyinput0 & keyinput1;
+  assign new_y_mux_key3_and_1 = new_U243 & keyinput2 & keyinput0 & new_not_keyinput1;
+  assign new_y_mux_key3 = new_y_mux_key3_and_0 | new_y_mux_key3_and_1;
+  assign new__state_1 = new_count_state_1;
+  assign new__state_2 = new_count_state_2;
+  assign new__state_3 = new_count_state_3;
+  assign new__state_5 = new__state_2 | new__state_3;
+  assign new_s__state_1 = new__state_1;
+  assign new_not_s__state_1 = ~new_s__state_1;
+  assign new_I0__state_1 = new_y_mux_key0;
+  assign new_I1__state_1 = new_y_mux_key1;
+  assign new_and_mux__state_1 = new_not_s__state_1 & new_I0__state_1;
+  assign new_and_mux__state_1_2 = new_s__state_1 & new_I1__state_1;
+  assign new_y_mux_4 = new_and_mux__state_1 | new_and_mux__state_1_2;
+  assign new_s__state_3 = new__state_3;
+  assign new_not_s__state_3 = ~new_s__state_3;
+  assign new_I0__state_3 = new_y_mux_key2;
+  assign new_I1__state_3 = new_y_mux_key3;
+  assign new_and_mux__state_3 = new_not_s__state_3 & new_I0__state_3;
+  assign new_and_mux__state_3_2 = new_s__state_3 & new_I1__state_3;
+  assign new_y_mux_5 = new_and_mux__state_3 | new_and_mux__state_3_2;
+  assign new_s__state_5 = new__state_5;
+  assign new_not_s__state_5 = ~new_s__state_5;
+  assign new_I0__state_5 = new_y_mux_4;
+  assign new_I1__state_5 = new_y_mux_5;
+  assign new_and_mux__state_5 = new_not_s__state_5 & new_I0__state_5;
+  assign new_and_mux__state_5_2 = new_s__state_5 & new_I1__state_5;
+  assign n42 = new_and_mux__state_5 | new_and_mux__state_5_2;
+  always @ (posedge clock) begin
+    VOTO0_REG <= n42;
+    STATO_REG_3_ <= n47;
+    STATO_REG_2_ <= n52;
+    STATO_REG_1_ <= n57;
+    STATO_REG_0_ <= n62;
+    V_OUT_REG_3_ <= n67;
+    V_OUT_REG_2_ <= n71;
+    V_OUT_REG_1_ <= n75;
+    V_OUT_REG_0_ <= n79;
+    SIGN_REG_3_ <= n83;
+    VOTO1_REG <= n88;
+    CTR_REG <= n93;
+    VOTO3_REG <= n97;
+    LAST_R_REG <= n102;
+    CTS_REG <= n107;
+    VOTO2_REG <= n111;
+    LAST_G_REG <= n116;
+    Q_0 <= n468;
+    Q_1 <= n471;
+  end
+endmodule

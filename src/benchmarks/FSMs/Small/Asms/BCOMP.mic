@@ -1,0 +1,31 @@
+ Y0 
+ Y1 y2 y4
+ Y2 y1 y5 y6 y7
+ Y3 y1 y4 y5
+ Y4 y1 y5 y8
+ Y5 y1 y3 y14
+ Y6 y3 y13
+ Y7 y11 y12
+ Y8 y9
+ Y9 y17
+ Y10 y3 y14
+ Y11 y7
+ Y12 y1 y2 y16
+ Y13 y2 y14 y15
+ Y14 y34
+ Y15 y33
+ Y16 y32
+ Y17 y39
+ Y18 y25
+ Y19 y24
+ Y20 y26 y27 y28
+ Y21 y29 y30 y31
+ Y22 y23
+ Y23 y22
+ Y24 y18 y19
+ Y25 y20 y21
+ Y26 y35
+ Y27 y2 y36 y37
+ Y28 y1 y2 y3 y14 y38
+ Y29 y7 y10 y23
+ Y30 y2 y3 y4

@@ -1,0 +1,64 @@
+ Y0 
+ Y1 y1
+ Y2 y2 y3 y4 y5
+ Y3 y3 y5 y6 y7 y8
+ Y4 y9
+ Y5 y3 y5 y6 y7 y10 y11
+ Y6 y3 y5 y21 y22
+ Y7 y6
+ Y8 y3 y5 y23 y24
+ Y9 y3 y4 y5
+ Y10 y3 y13 y14
+ Y11 y3 y14 y15
+ Y12 y3 y5 y16 y17
+ Y13 y11 y18 y19
+ Y14 y3 y4 y5 y20
+ Y15 y3 y4 y5 y21
+ Y16 y5 y6 y7 y25
+ Y17 y3 y5 y6 y7 y26
+ Y18 y3 y5 y13 y27
+ Y19 y4 y5 y16 y28 y29
+ Y20 y3 y5 y6 y7 y29
+ Y21 y3 y5 y6 y30
+ Y22 y3 y5 y6 y31
+ Y23 y11
+ Y24 y64
+ Y25 y18
+ Y26 y35
+ Y27 y3 y5 y32 y33 y34
+ Y28 y3 y5 y24 y34 y35
+ Y29 y3 y5 y36 y37
+ Y30 y3 y5 y32 y38
+ Y31 y3 y5 y23 y38
+ Y32 y3 y5 y38
+ Y33 y40
+ Y34 y39
+ Y35 y5 y36 y38 y42
+ Y36 y41
+ Y37 y3 y5 y42
+ Y38 y3 y5 y21 y43
+ Y39 y3 y5 y42 y44
+ Y40 y3 y5 y12 y21
+ Y41 y3 y5 y45 y46
+ Y42 y3 y5 y47
+ Y43 y3 y5 y48 y49
+ Y44 y3 y5 y50
+ Y45 y5 y36 y38 y53 y54
+ Y46 y5 y29 y36 y38 y53
+ Y47 y3 y5 y24 y36
+ Y48 y3 y5 y36 y38
+ Y49 y3 y5 y50 y52
+ Y50 y3 y5 y47 y51
+ Y51 y3 y14 y56
+ Y52 y3 y14 y58
+ Y53 y3 y14
+ Y54 y3 y14 y57
+ Y55 y3 y5 y6 y7 y59
+ Y56 y3 y5 y6 y7 y60
+ Y57 y3 y5 y6 y7 y55
+ Y58 y3 y5 y6 y7 y30
+ Y59 y3 y5 y6 y7 y31
+ Y60 y61
+ Y61 y3 y14 y62
+ Y62 y3 y14 y63
+ Y63 y2 y3 y5 y12

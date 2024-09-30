@@ -1,0 +1,310 @@
+Y0
+Y1  y11 y15
+Y2  y1 y2
+Y3  y3 y4 y5
+Y4  y2 y6 y7
+Y5  y4 y5
+Y6  y8 y9 y28
+Y7  y10
+Y8  y7
+Y9  y11
+Y10  y12
+Y11  y9 y12
+Y12  y4 y9
+Y13  y9
+Y14  y3 y9
+Y15  y4 y13 y14
+Y16  y13 y14
+Y17  y14 y15
+Y18  y2
+Y19  y16
+Y20  y17
+Y21  y18 y19
+Y22  y4 y9 y12 y20
+Y23  y4 y11
+Y24  y3 y11
+Y25  y21
+Y26  y22
+Y27  y3 y4 y10 y23
+Y28  y2 y16 y24
+Y29  y3 y5
+Y30  y5
+Y31  y4 y11 y15 y25
+Y32  y5 y12
+Y33  y10 y26 y27
+Y34  y27
+Y35  y3 y4
+Y36  y5 y6
+Y37  y6 y7
+Y38  y1 y2 y7
+Y39  y8
+Y40  y8 y10
+Y41  y4
+Y42  y2 y13
+Y43  y6 y7 y10
+Y44  y5 y6 y10 y13
+Y45  y6 y10
+Y46  y10 y14
+Y47  y1 y6 y10 y13 y20
+Y48  y7 y12
+Y49  y12 y13
+Y50  y6 y7 y10 y13
+Y51  y1 y10
+Y52  y4 y16 y21
+Y53  y2 y7
+Y54  y12 y15 y22
+Y55  y2 y7 y13
+Y56 
+Y57  y3 y20
+Y58  y1
+Y59  y2 y3
+Y60  y6
+Y61  y12 y13 y14
+Y62  y15
+Y63  y18
+Y64  y19
+Y65  y20
+Y66  y3
+Y67  y23
+Y68  y24 y25
+Y69  y26 y27
+Y70  y13 y14 y28
+Y71  y13 y14 y29
+Y72  y13 y14 y30
+Y73  y12 y13 y14 y28
+Y74  y12 y13 y14 y29
+Y75  y12 y13 y14 y30
+Y76  y31
+Y77  y14 y28 y32 y33
+Y78  y34
+Y79  y35
+Y80  y36
+Y81  y3 y22 y37
+Y82  y1 y3 y4
+Y83  y2 y12 y14 y16
+Y84  y17 y20
+Y85  y4 y7
+Y86  y13 y14 y15
+Y87  y13 y14 y15 y28
+Y88  y13 y14 y15 y29
+Y89  y13 y14 y15 y30
+Y90  y15 y32 y33 y34
+Y91  y37
+Y92  y4 y22 y38
+Y93  y1 y5 y11
+Y94  y2 y11 y12
+Y95  y7 y15 y24
+Y96  y1 y9 y11 y26 y27
+Y97  y25
+Y98  y28
+Y99  y8 y16 y29
+Y100  y1 y2 y3
+Y101  y1 y2 y3 y6
+Y102  y7 y8
+Y103  y1 y2 y9
+Y104  y10 y11
+Y105  y8 y12 y13
+Y106  y8 y14
+Y107  y2 y3 y17
+Y108  y2 y3 y6
+Y109  y10 y17 y20 y21
+Y110  y2 y3 y6 y17
+Y111  y2 y6 y17 y18
+Y112  y2 y17 y18
+Y113  y2 y18
+Y114  y2 y6 y18
+Y115  y2 y11 y17
+Y116  y24
+Y117  y22 y25
+Y118  y1 y2 y17 y18 y23
+Y119  y17 y21
+Y120  y6 y21
+Y121  y21 y24
+Y122  y1 y6
+Y123  y3 y8
+Y124  y2 y4
+Y125  y9 y10
+Y126  y5 y8
+Y127  y11 y14 y18
+Y128  y4 y5 y18
+Y129  y4 y18
+Y130  y5 y18
+Y131  y23 y24
+Y132  y3 y5 y15 y18 y25
+Y133  y4 y17
+Y134  y5 y17
+Y135  y6 y21 y26
+Y136  y13 y17
+Y137  y4 y5 y8
+Y138  y4 y8
+Y139  y15 y21 y28
+Y140  y8 y22
+Y141  y16 y17 y28
+Y142  y16 y18 y28
+Y143  y16 y28
+Y144  y17 y20 y28
+Y145  y28 y29
+Y146  y2 y21
+Y147  y6 y8 y25
+Y148  y15 y28
+Y149  y6 y20
+Y150  y10 y19 y21 y29 y30 y32
+Y151  y2 y14 y19 y29 y30 y32
+Y152  y13 y20 y21 y22 y29 y30 y32
+Y153  y9 y26
+Y154  y4 y12 y27
+Y155  y4 y11 y18
+Y156  y4 y11 y15 y19 y21 y28
+Y157  y4 y11 y17
+Y158  y29 y30
+Y159  y4 y29
+Y160  y29 y31
+Y161  y29 y31 y32
+Y162  y4 y17 y29 y32
+Y163  y4 y29 y32
+Y164  y4 y18 y29 y32
+Y165  y4 y10 y11 y12
+Y166  y3 y7
+Y167  y8 y9
+Y168  y3 y7 y14
+Y169  y3 y7 y11
+Y170  y3 y8 y12 y13
+Y171  y8 y9 y11
+Y172  y8 y9 y14
+Y173  y3 y8 y12
+Y174  y1 y25
+Y175  y2 y12 y15
+Y176  y5 y16 y17
+Y177  y7 y15
+Y178  y7 y11 y15
+Y179  y7 y9 y18 y19
+Y180  y21 y22
+Y181  y7 y9
+Y182  y7 y9 y11
+Y183  y7 y9 y14
+Y184  y5 y8 y11 y12
+Y185  y5 y12 y26
+Y186  y26
+Y187  y2 y9 y26
+Y188  y5 y20
+Y189  y3 y16
+Y190  y1 y3 y4 y5 y6
+Y191  y4 y5 y6
+Y192  y3 y5 y8
+Y193  y9 y10 y11
+Y194  y4 y5 y12
+Y195  y9 y13
+Y196  y9 y14
+Y197  y12 y15
+Y198  y3 y12 y16 y17 y18 y19
+Y199  y18 y19 y20
+Y200  y15 y18 y19 y20
+Y201  y12 y16
+Y202  y16 y18 y19 y20
+Y203  y8 y16
+Y204  y6 y18 y19
+Y205  y14 y15 y18 y19
+Y206  y16 y18 y19 y20 y21
+Y207  y15 y16 y20 y26
+Y208  y15 y20
+Y209  y16 y20
+Y210  y5 y20 y21
+Y211  y12 y19
+Y212  y19 y20
+Y213  y6 y19
+Y214  y14 y19
+Y215  y19 y20 y21
+Y216  y2 y14
+Y217  y2 y6 y28
+Y218  y5 y6 y7
+Y219  y2 y8 y9
+Y220  y5 y10
+Y221  y1 y11
+Y222  y11 y14
+Y223  y11 y13
+Y224  y9 y15
+Y225  y15 y16
+Y226  y8 y18
+Y227  y1 y11 y19
+Y228  y3 y14
+Y229  y13 y14 y16 y23
+Y230  y14 y16
+Y231  y13 y16
+Y232  y2 y11
+Y233  y25 y26
+Y234  y3 y15
+Y235  y7 y11
+Y236  y2 y12 y13
+Y237  y14
+Y238  y16 y17
+Y239  y5 y8 y10 y18
+Y240  y2 y10 y20
+Y241  y7 y14 y23
+Y242  y4 y13 y24
+Y243  y2 y19 y24
+Y244  y1 y4 y23
+Y245  y2 y8
+Y246  y2 y9 y10
+Y247  y8 y11 y12
+Y248  y13
+Y249  y3 y14 y15
+Y250  y3 y15 y16
+Y251  y9 y17 y18
+Y252  y16 y18
+Y253  y8 y19
+Y254  y14 y18
+Y255  y4 y21
+Y256  y10 y15
+Y257  y10 y15 y16
+Y258  y8 y11
+Y259  y4 y14 y15 y25
+Y260  y4 y15 y16
+Y261  y4 y14 y15
+Y262  y11 y12
+Y263  y15 y112
+Y264  y5 y15 y16
+Y265  y13 y15
+Y266  y6 y13
+Y267  y12 y13 y14 y21
+Y268  y5 y14 y22
+Y269  y5 y9
+Y270  y12 y14
+Y271  y8 y17 y23
+Y272  y6 y12
+Y273  y11 y16 y25
+Y274  y2 y14 y24
+Y275  y4 y5 y6 y13
+Y276  y2 y5 y6 y7
+Y277  y5 y8 y9
+Y278  y7 y8 y9
+Y279  y5 y7 y8 y9
+Y280  y9 y24
+Y281  y5 y6 y11
+Y282  y1 y11 y12
+Y283  y5 y6 y7 y11
+Y284  y2 y5 y6
+Y285  y6 y10 y20
+Y286  y8 y14 y15
+Y287  y1 y8 y13
+Y288  y1 y8 y10
+Y289  y5 y7 y9
+Y290  y5 y6 y10
+Y291  y5 y6 y7 y10
+Y292  y14 y21
+Y293  y4 y16
+Y294  y5 y7 y9 y12
+Y295  y1 y7 y21
+Y296  y3 y4 y9 y10 y11
+Y297  y3 y4 y9 y13
+Y298  y4 y9 y11
+Y299  y4 y14
+Y300  y9 y11
+Y301  y4 y15
+Y302  y3 y4 y13
+Y303  y3 y9 y11 y20
+Y304  y1 y7 y16
+Y305  y14 y21 y22
+Y306  y4 y5 y9
+Y307  y7 y10 y21 y22
+Y308  y6 y7 y8
+Y309  y2 y8 y13 y23

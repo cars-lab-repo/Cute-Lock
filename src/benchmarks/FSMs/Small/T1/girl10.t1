@@ -1,0 +1,16 @@
+a1   a2   x6          y8y9      1
+a1   a3   ~x6*x7      y6        2
+a1   a3   ~x6*~x7     y3y6y10   3
+a2   a2   x4*x1       y1y2      4
+a2   a4   x4*~x1      y3y4      5
+a2   a5   ~x4         y4        6
+a3   a2   x1*x2*x3    y1y3      7
+a3   a6   x1*x2*~x3   y6y7      8
+a3   a2   x1*~x2      y1y3      9
+a3   a5   ~x1         y4        10
+a4   a3   x6          y6y7      11
+a4   a4   ~x6         y3y4      12
+a5   a1   x5          --        13
+a5   a2   ~x5*x1      y8y9      14
+a5   a4   ~x5*~x1     y3y4      15
+a6   a4   1           y3y4      16
