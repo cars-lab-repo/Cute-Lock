@@ -39,11 +39,11 @@ class StructuralEncryptor:
             raise ValueError(
                 f"The number of DFF to lock is greater than the number of DFF gates in the circuit"
             )
+        self.encrypt()
 
     def encrypt(self):
         """locks the beginning of DFF gates with the keys provided"""
         self.__add_keyinputs()
-        # self.__add_keys()
         self.__add_counter()
         self.__add_muxes()
         self.__write_file()
@@ -100,24 +100,11 @@ class StructuralEncryptor:
             {}
         )  # gate_name: (gate_type, (input1, input0))
 
-        # the counter size if log2(len(keys))
         counter_size = int(log2(len(self.keys)))
 
-        # add the counter signals to the output ( to debug)
-        # self.bench_file.outputs.extend([f"Q_{i}" for i in range(counter_size)])
-
-        # print("counter_size:", counter_size)
-        # to generate a counter I would have to use PyEDA to generate the logic table
-        # the logic values for the counter would be q_counter_0 to q_counter_(counter_size-1)
         counter_exprs = generate_counter(counter_size)
-        # print("counter_exprs:", counter_exprs)
-
-        # convert the expressions to map
         for d, expr in counter_exprs.items():
-            # print("counter_input = ", d)
             m = convert_s_to_map(str(expr))
-            # print("expr = ", expr)
-            # print("m:", m, "\n")
             keys = list(m.keys())
             cur_gate_keys_except_last = {key: m[key] for key in keys[:-1]}
             counter_gates.update(cur_gate_keys_except_last)
@@ -147,27 +134,9 @@ class StructuralEncryptor:
                 )
         self.bench_file.gates.update(counter_gates)
 
-    def __add_keys(self):
-        keys_gates: Dict[str, tuple[str, tuple[str, str]]] = {}
-
-        maximum_key = max(self.keys)
-        key_size = ceil(log2(maximum_key + 1))
-        for i, key in enumerate(self.keys):
-            key_val = [int(x) for x in format(key, f"0{key_size}b")]
-            key_val_str = []
-            for j, value in enumerate(key_val):
-                key_val_str.append(
-                    f"keyinput{len(key_val)-1-j}"
-                    if value == 1
-                    else f"not_keyinput{len(key_val)-1-j}"
-                )
-            keys_gates[f"key{i}"] = ("and", tuple(key_val_str))
-            keys_gates[f"not_key{i}"] = ("NOT", (f"key{i}",))  # type: ignore
-        self.bench_file.gates.update(keys_gates)
 
     def __add_muxes(self):
         # get the original circuit
-
         count = 0
         for _ in range(self.numbers_of_dff_to_lock):
             original_circuit_input = self.dff_inputs.pop(0)
@@ -176,14 +145,8 @@ class StructuralEncryptor:
                 original_circuit_output,
                 self.bench_file.gates[original_circuit_input],
             )
-            # print("original = ", original_circuit_input)
-
-            # pop_random_value_from_list(self.gates_to_lock)
             mux_gates: Dict[str, tuple[str, tuple]] = {}
-            # Add the muxes for the key checking
-
             def add_mux(s: str, i0: str, i1: str, y: str):
-                # print('add_mux')
                 nonlocal count
                 mux_gates[f"s_{s}"] = ("BUF", (s,))
                 mux_gates[f"not_s_{s}"] = ("NOT", (f"s_{s}",))
@@ -198,11 +161,8 @@ class StructuralEncryptor:
                 []
             )  # (gate_name, (gate_type, (input1, input0)))
             gates_to_lock_list = self.dff_inputs.copy()
-            # pick log(n) values from res_i
             num_values_to_pick = round(max(math.log(self.maximum_key, 4), 2))
-            # Pick random values from rest_i
             for i, key in enumerate(self.keys):
-                # print("the key = ", key)
                 i0 = original_circuit_input
                 last_gate = ""
                 hardware_and_keys: List[Tuple[int, str]] = []  # (key, gate_name)
@@ -228,7 +188,6 @@ class StructuralEncryptor:
                     hardware_and_keys.append((random_value, gate))
                     last_gate = gate
 
-                # place i0 into rest_i based on the key value ( i.e. if key = 3, then i0 is placed at the 3rd index)
                 hardware_and_keys.append((key, i0))
                 self.add_n_to_1_mux(
                     s_inputs=[f"keyinput{i}" for i in range(self.key_size)],
@@ -250,7 +209,6 @@ class StructuralEncryptor:
                 next_states: list[tuple[str, tuple[str, tuple]]] = []
 
                 while prev_muxes:
-                    # print("prev_states = ", pprint.pformat(prev_states))
                     state_0 = prev_states.pop(0)
                     state_1 = prev_states.pop(0)
                     add_mux(
@@ -275,7 +233,6 @@ class StructuralEncryptor:
     def __write_file(self):
         file_name = self.file_path.split("/")[-1]
 
-        # Ensure self.output_path ends with '/'
         self.output_path = os.path.join(self.output_path, "")
         output_path = self.output_path + file_name.replace(".bench", "_encrypted.bench")
         output_path = os.path.normpath(output_path)
@@ -317,5 +274,3 @@ if __name__ == "__main__":
     encryptor = StructuralEncryptor(
         file_path=file_name, keys=keys_, output_path=output_dir, s=s
     )
-
-    encryptor.encrypt()
