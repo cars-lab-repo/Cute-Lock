@@ -1,105 +1,128 @@
 # Cute-Locking
 
+## Prerequisites
 
-## Behavioral Milti-Key Locking Algorithm
-Start with a seq.v file ( regular sequential file), make the locked_seq_file.v file by running the python script here. 
+- Ubuntu 22.04 (WSL, VM, or native installation)
+- Python 3
+- Conda
 
-### Automated file encryption 
-The script will take a seq.v file and encrypt it using the multikey locking algorithm. The script will also create a locked_seq_file.v file.
-1. Creates a encryption of the seq.v file using the multikey locking algorithm.
-2. Creates .blif file of the seq.v and seq_encrypted file using yosys
-3. Modifications are done to replace .subckt with .names and .latch syntax in the .blif file.
-   1. First state one (s1) should be 0. Or at least one state should be zero. 
-   2. pr_state should be an output.
-4. Creates a .bench file of the .blif file using abc
-5. Runs the .bench file using neos to test the locking algorithm.
+## Setup
 
+1. Install Python 3
+2. Set up the Python environment using Conda:
+   ```
+   conda env create -f /src/environment.yml
+   conda activate dynamic_key_logic_key_locking
+   ```
+3. Install the following tools (found under `src/Tools/*`):
+   - yosys
+   - abc
+   - neos
+   - RANE
+   - HALL
 
-### Before runing the testing encryption   
-1. Need to be using ubuntu 22.04, - any method of running ubuntu is fine.( WSL, VM, etc.)
-2. Install yosys, abc, neos, RANE, HALL( All tools listed under src/Tools/*)
-   - For this you will need to download the repositories from github and compile them.
-   - Also other dependencies are needed. 
-3. Seq file necessaries: 
-   1. note that all the files must have the pr_state as an output. 
-   2. First state one (s1) should be 0. Or at least one state should be zero. 
-   - The FSMs benchmark files in this repository are already modified to have the first state as 0, and the pr_state as an output.
+   Download and compile these repositories from GitHub. Additional dependencies may be required.
 
-### How to run 
-#### Before runing the testing encryption 
-- Using ubuntu 22.04, - any method of running ubuntu is fine.( WSL, VM, etc.)
-- Install yosys, abc, neos. 
-   - For this you will need to download the repositories from github and compile them.
-   - Also other dependencies are needed.
+4. Navigate to the 'src' folder.
 
-#### How to run single test
- - Run the run_file_encryption.sh file with a seq.v file (original) 
-     `./run_file_encryption.sh   seq.v  `
-   - for example `./run_file_encryption.sh   NonKey.v  `
+## Behavioral Multi-Key Locking Algorithm
 
+### Encrypting a File
 
-### What does the script do
-To test the locking algorithm, run the convert_verilog_to_bench.sh file (`./convert_verilog_to_bench.sh seq.v locked_seq_file.v` ). This file will do the following; 
-1. Convert the verilog files .blif file using yosys
-2. Convert the .blif files to  .bench files using abc - There might be a some manual work here ( .bliff files cannot contain subckt)
-3. Run the .bench files using neos to test the locking algorithm.
+To encrypt a file using the Behavioral Multi-Key Locking algorithm, use the Python script with the following arguments:
 
-#### Run multiple tests
-- Run the run_multiple_file_encryption.sh file with a directory path to run all the seq.v files in the directory. 
-     `./run_multiple_file_encryption.sh   dir/path  `
-   - for example `./run_multiple_file_encryption.sh   ./FSMs/  `
+```
+python script_name.py [arguments]
+```
 
+Arguments:
+- `--file_name`: Path to the Verilog file to encrypt. Default: "./nonKey.v"
+- `--keys`: Keys to use for encryption (space-separated). Default: "1 2 3 4"
+- `--counter_cycles`: Number of clock cycles per stage. Default: 2
+- `--output_dir`: Output directory for the encrypted file. Default: "./"
 
+Example:
+```
+python script_name.py --file_name path/to/your/file.v --keys 5 6 7 8 --counter_cycles 3 --output_dir path/to/output/
+```
 
+If an argument is not specified, the script will use its default value.
 
+### Automated File Encryption
 
+This process starts with a `seq.v` file (regular sequential file) and creates a `locked_seq_file.v` file.
 
-FINISHED DOWN
-## Structural MiltiKey Locking Algorithm
-Start with a seq.bench file, make the locked_seq_file.bench file by running the python script here. 
+#### Single Test
 
+Run the `run_file_encryption.sh` script with a `seq.v` file:
 
-### Automated file encryption 
-The script will take a seq.v file and encrypt it using the multikey locking algorithm. The script will also create a locked_seq_file.v file.
-1. Creates a encryption of the seq.v file using the multikey locking algorithm.
-2. Creates .blif file of the seq.v and seq_encrypted file using yosys
-3. Modifications are done to replace .subckt with .names and .latch syntax in the .blif file.
-   1. First state one (s1) should be 0. Or at least one state should be zero. 
-   2. pr_state should be an output.
-4. Creates a .bench file of the .blif file using abc
-5. Runs the .bench file using neos to test the locking algorithm.
+```bash
+./run_file_encryption.sh seq.v
+```
 
+Example:
+```bash
+./run_file_encryption.sh NonKey.v
+```
 
-### Before runing the testing encryption   
-1. Need to be using ubuntu 22.04, - any method of running ubuntu is fine.( WSL, VM, etc.)
-2. Install yosys, abc, neos, RANE, HALL( All tools listed under src/Tools/*)
-   - For this you will need to download the repositories from github and compile them.
-   - Also other dependencies are needed. 
-3. Seq file necessaries: 
-   1. note that all the files must have the pr_state as an output. 
-   2. First state one (s1) should be 0. Or at least one state should be zero. 
-   - The FSMs benchmark files in this repository are already modified to have the first state as 0, and the pr_state as an output.
+#### Multiple Tests
 
-### How to run 
-#### Before runing the testing encryption 
-- Using ubuntu 22.04, - any method of running ubuntu is fine.( WSL, VM, etc.)
-- Install yosys, abc, neos. 
-   - For this you will need to download the repositories from github and compile them.
-   - Also other dependencies are needed.
+To run tests on multiple files in a directory:
 
-#### How to run single test
- - Run the run_file_encryption.sh file with a seq.v file (original) 
-     `./run_file_encryption.sh   seq.v  `
-   - for example `./run_file_encryption.sh   NonKey.v  `
+```bash
+./run_multiple_file_encryption.sh dir/path
+```
 
+Example:
+```bash
+./run_multiple_file_encryption.sh ./FSMs/
+```
 
-### What does the script do
-To test the locking algorithm, run the convert_verilog_to_bench.sh file (`./convert_verilog_to_bench.sh seq.v locked_seq_file.v` ). This file will do the following; 
-1. Convert the verilog files .blif file using yosys
-2. Convert the .blif files to  .bench files using abc - There might be a some manual work here ( .bliff files cannot contain subckt)
-3. Run the .bench files using neos to test the locking algorithm.
+### Script Process
 
-#### Run multiple tests
-- Run the run_multiple_file_encryption.sh file with a directory path to run all the seq.v files in the directory. 
-     `./run_multiple_file_encryption.sh   dir/path  `
-   - for example `./run_multiple_file_encryption.sh   ./FSMs/  `
+The script performs the following steps:
+
+1. Encrypts the `seq.v` file using the multi-key locking algorithm.
+2. Creates `.blif` files of both `seq.v` and the encrypted file using yosys.
+3. Modifies the `.blif` files:
+   - Replaces `.subckt` with `.names`
+   - Adjusts `.latch` syntax
+   - Ensures at least one state (preferably the first state, s1) is 0
+4. Creates `.bench` files from the `.blif` files using abc.
+5. Tests the locking algorithm by running the `.bench` files using neos.
+
+## Structural Multi-Key Locking Algorithm
+
+This process starts with a `seq.bench` file and creates a `locked_seq_file.bench` file.
+
+### Encrypting a .bench File
+
+Use the `/src/structuralEncryptor.py` script with the following options:
+
+- `--file_name`: (Required) Path to the file to encrypt. Default: `./s27.bench`
+- `--keys`: (Optional) Space-separated string of keys for encryption. Default: "2 2"
+- `--output_dir`: (Optional) Output directory. Default: `./output/`
+- `--s`: (Optional) Number of DFF to lock. Default: 1
+
+Example:
+```bash
+python3 structuralEncryptor.py --file_name example.txt --keys "3 4" --output_dir "./encrypted_output/" --s 2
+```
+
+### Single Test
+
+Run the `run_file_encryption_structural.sh` script with a `seq.bench` file:
+
+```bash
+./run_file_encryption_structural.sh ./location/to/seq.bench
+```
+
+### Multiple Tests
+
+To run tests on multiple `.bench` files in a directory, edit the directory path in the `run_m_structual.sh` script, then run:
+
+```bash
+./run_m_structual.sh
+```
+
+## Additional Information

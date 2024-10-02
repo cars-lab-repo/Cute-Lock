@@ -64,25 +64,25 @@ echo "Encrypted file: $encrypted_file"
 # ./bin/neos -d bbo <sim_cir/enc_cir> <enc_cir/corrkey> <strategy> [num_input_patts] [max_depth] [iteration_limit]
 
 
-# line="time timeout 1m  ./Tools/neos/bin/neos -d bbo ./${not_encrypted_file}  ./${encrypted_file} sa $num_input_patts $max_depth --to=1200" 
-# echo -e '\n\n\n------------------------------'
-# echo $line
-# eval $line 
-# # 
-# line="time timeout 1m  ./Tools/neos/bin/neos -d int ./${not_encrypted_file%.*}.bench  ./${encrypted_file%.*}.bench $iteration_limit"
-# echo -e '\n\n\n------------------------------'
-# echo $line
-# eval $line 
+line="time timeout 20.1h  ./Tools/neos/bin/neos -d bbo ./${not_encrypted_file}  ./${encrypted_file} sa $num_input_patts $max_depth --to=1200" 
+echo -e '\n\n\n------------------------------'
+echo $line
+eval $line 
 # 
-# command="time timeout 1m  ./Tools/neos/bin/neos -d int --kc_sweep=2 ${not_encrypted_file%.*}.bench ${encrypted_file%.*}.bench $iteration_limit"
-# echo -e '\n\n\n------------------------------'
-# echo -e "\n \n \n $command"
-# eval $command
-# 
-# new_line="time timeout 1m python3 ./Tools/RANE/main_sat.py -b ${not_encrypted_file%.*}.bench -o ${encrypted_file%.*}.bench -s=\"z3\" -p=2 -t=18"
-# echo -e '\n\n\n------------------------------'
-# echo $new_line
-# eval $new_line
+line="time timeout 20.1h  ./Tools/neos/bin/neos -d int ./${not_encrypted_file%.*}.bench  ./${encrypted_file%.*}.bench $iteration_limit"
+echo -e '\n\n\n------------------------------'
+echo $line
+eval $line 
+
+command="time timeout 20.1h  ./Tools/neos/bin/neos -d int --kc_sweep=2 ${not_encrypted_file%.*}.bench ${encrypted_file%.*}.bench $iteration_limit"
+echo -e '\n\n\n------------------------------'
+echo -e "\n \n \n $command"
+eval $command
+
+new_line="time timeout 20.1h python3 ./Tools/RANE/main_sat.py -b ${not_encrypted_file%.*}.bench -o ${encrypted_file%.*}.bench -s=\"z3\" -p=2 -t=72000"
+echo -e '\n\n\n------------------------------'
+echo $new_line
+eval $new_line
 
 if [ "$remove_generated_files" == "true" ]; then
 	# Clean-up generated files except the input files
