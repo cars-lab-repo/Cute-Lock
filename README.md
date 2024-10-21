@@ -32,7 +32,7 @@
 To encrypt a file using the Behavioral Multi-Key Locking algorithm, use the Python script with the following arguments:
 
 ```
-python script_name.py [arguments]
+python CreateEncryption.py [arguments]
 ```
 
 Arguments:
@@ -43,7 +43,7 @@ Arguments:
 
 Example:
 ```
-python script_name.py --file_name path/to/your/file.v --keys 5 6 7 8 --counter_cycles 3 --output_dir path/to/output/
+python CreateEncryption.py --file_name path/to/your/file.v --keys 5 6 7 8 --counter_cycles 3 --output_dir path/to/output/
 ```
 
 If an argument is not specified, the script will use its default value.
