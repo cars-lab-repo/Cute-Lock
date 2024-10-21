@@ -10,3 +10,9 @@
 [submodule "src/Tools/fall"]
 	path = src/Tools/fall
 	url = https://bitbucket.org/spramod/fall-attacks
+[submodule "src/Tools/yosys"]
+	path = src/Tools/yosys
+	url = https://github.com/YosysHQ/yosys.git
+[submodule "src/Tools/abc"]
+	path = src/Tools/abc
+	url = https://github.com/berkeley-abc/abc.git
