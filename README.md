@@ -25,7 +25,7 @@
 
 4. Navigate to the 'src' folder.
 
-## Behavioral Multi-Key Locking Algorithm
+## Cute-Lock-Beh 
 
 ### Encrypting a File
 
@@ -91,7 +91,7 @@ The script performs the following steps:
 4. Creates `.bench` files from the `.blif` files using abc.
 5. Tests the locking algorithm by running the `.bench` files using neos.
 
-## Structural Multi-Key Locking Algorithm
+## Cute-Lock-Str
 
 This process starts with a `seq.bench` file and creates a `locked_seq_file.bench` file.
 
@@ -125,4 +125,20 @@ To run tests on multiple `.bench` files in a directory, edit the directory path 
 ./run_m_structual.sh
 ```
 
-## Additional Information
+
+<!-- ## Citation
+```
+@INPROCEEDINGS{KGL-Lock,
+  author={Lopez, Kevin and Rezaei, Amin},
+  booktitle={}, 
+  title={Cure Lock: Multi-Key Logic}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={},
+  doi={}
+  }
+``` -->
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

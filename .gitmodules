@@ -1,30 +1,12 @@
 [submodule "src/Tools/neos"]
 	path = src/Tools/neos
 	url = https://bitbucket.org/kavehshm/neos/
-[submodule "src/Tools/yosys"]
-	path = src/Tools/yosys
-	url = https://github.com/YosysHQ/yosys.git
-[submodule "src/Tools/abc"]
-	path = src/Tools/abc
-	url = https://github.com/berkeley-abc/abc.git
 [submodule "src/Tools/RANE"]
 	path = src/Tools/RANE
 	url = https://github.com/gatelabdavis/RANE.git
 [submodule "src/Tools/hal"]
 	path = src/Tools/hal
 	url = https://github.com/emsec/hal.git
-[submodule "src/Tools/SFLL"]
-	path = src/Tools/SFLL
-	url = https://github.com/micky960/SFLL_fault.git
-[submodule "src/Tools/SFLL_ATTACK"]
-	path = src/Tools/SFLL_ATTACK
-	url = https://github.com/DfX-NYUAD/CCS17.git
-[submodule "src/Tools/pyPicoSat"]
-	path = src/Tools/pyPicoSat
-	url = https://github.com/pysmt/pyPicoSAT
-[submodule "src/Tools/pyLingeling"]
-	path = src/Tools/pyLingeling
-	url = https://github.com/pramodsu/pyLingeling.git
 [submodule "src/Tools/fall"]
 	path = src/Tools/fall
 	url = https://bitbucket.org/spramod/fall-attacks
