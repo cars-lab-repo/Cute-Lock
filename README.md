@@ -1,4 +1,6 @@
-# Cute-Locking
+# Cute-Lock: Behavioral and Structural Multi-Key Logic Locking Using Time Base Keys
+This repository contains resources related to Cute-Lock logic locking family. </br>
+[Kevin Lopez](https://github.com/KevinDLopez) & [Amin Rezaei](https://github.com/r3zaei) </br>
 
 ## Prerequisites
 
@@ -126,19 +128,19 @@ To run tests on multiple `.bench` files in a directory, edit the directory path 
 ```
 
 
-<!-- ## Citation
+## Citation
 ```
 @INPROCEEDINGS{KGL-Lock,
   author={Lopez, Kevin and Rezaei, Amin},
   booktitle={}, 
-  title={Cure Lock: Multi-Key Logic}, 
-  year={2025},
+  title={Cute-Lock: Behavioral and Structural Multi-Key Logic Locking Using Time Base Keys}, 
+  year={},
   volume={},
   number={},
   pages={},
   doi={}
   }
-``` -->
+```
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
