@@ -130,7 +130,7 @@ To run tests on multiple `.bench` files in a directory, edit the directory path 
 
 ## Citation
 ```
-@INPROCEEDINGS{KGL-Lock,
+@INPROCEEDINGS{Cute-Lock,
   author={Lopez, Kevin and Rezaei, Amin},
   booktitle={}, 
   title={Cute-Lock: Behavioral and Structural Multi-Key Logic Locking Using Time Base Keys}, 
