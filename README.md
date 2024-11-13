@@ -132,9 +132,9 @@ To run tests on multiple `.bench` files in a directory, edit the directory path 
 ```
 @INPROCEEDINGS{Cute-Lock,
   author={Lopez, Kevin and Rezaei, Amin},
-  booktitle={}, 
+  booktitle={2025 Design, Automation & Test in Europe Conference & Exhibition (DATE)}, 
   title={Cute-Lock: Behavioral and Structural Multi-Key Logic Locking Using Time Base Keys}, 
-  year={},
+  year={2025},
   volume={},
   number={},
   pages={},
