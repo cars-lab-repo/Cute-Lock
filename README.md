@@ -137,8 +137,8 @@ To run tests on multiple `.bench` files in a directory, edit the directory path 
   year={2025},
   volume={},
   number={},
-  pages={},
-  doi={}
+  pages={1-7},
+  doi={10.23919/DATE64628.2025.10993182}
   }
 ```
 
